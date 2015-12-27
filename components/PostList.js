@@ -7,8 +7,9 @@ const PostList = ({
 }) => (
   <div>
   <h2>Post List</h2>
-    {Object.keys(posts).map(key => 
+    {Object.keys(posts).map(key =>
        <Post
+        key={key}
         linkText={key}
         post={posts[key]}
         onClick={() => onPostClick(key)}

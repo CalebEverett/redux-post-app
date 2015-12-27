@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import marked from 'marked'
 
 export default class ViewPost extends Component {
   render () {
@@ -8,8 +9,9 @@ export default class ViewPost extends Component {
 		return (
 		  <div >
 			  <h2><a name="ViewPost" >Post to View</a></h2>
-		    {Object.keys(post).map(key =>
-		      <li key={key}>{key}: {post[key]}</li>
+			  {console.log(Object.keys(post))}
+		    {Object.keys(post).map((key, i) =>
+		      <li key={i}><span dangerouslySetInnerHTML={{__html: marked(post[key])}} /></li>
 		    )}
 		  </div>
 	  )
