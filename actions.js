@@ -56,5 +56,6 @@ export function registerListeners() {
 
 function recordFromSnapshot(snapshot) {
   let record = {[snapshot.key()]: snapshot.val()}
+  console.log(record)
   return record;
 }

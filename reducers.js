@@ -16,14 +16,14 @@ function post(state, action) {
 function posts(state = {}, action) {
   switch (action.type) {
     case ADD_POST_SUCCESS:
-      return Object.assign(state,
+      return Object.assign({}, state,
           post(undefined, action))
     default:
       return state
   }
 }
 
-function viewPostKey(state = null, action) {
+function viewPostKey(state = {key: "No Post Selected"}, action) {
   console.log('viewPostKey: ', action.key)
   switch (action.type) {
     case VIEW_POST:
@@ -39,6 +39,7 @@ export function firebaseReducer(state = null) {
 
 const postApp = combineReducers({
   posts,
+  viewPostKey,
   firebase: firebaseReducer,
   routing: routeReducer
 })

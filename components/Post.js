@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import marked from 'marked'
 
 const Post = ({
-  key,
+  linkText,
   post,
   onClick
 }) => (
@@ -11,7 +11,7 @@ const Post = ({
          e.preventDefault()
          onClick()
        }}>
-       {key}
+       {linkText}
        </a>
     </li>
     <li>Title: {post.title}</li>
